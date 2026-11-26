@@ -1,10 +1,10 @@
 # Crítica externa #01 — avaliaçêo do estado do repositório
 
-> Análise externa recebida sobre o repositório `inematds/logfree` no estado do primeiro commit (README + `doc/logfree.txt`, sem código).
+> Análise externa recebida sobre o repositório `linnoff88-dev/logfree` no estado do primeiro commit (README + `doc/logfree.txt`, sem código).
 
 ---
 
-Analisei o `inematds/logfree` e, hoje, ele está muito mais próximo de um **PRD/blueprint de produto** do que de um sistema implementado. O repositório é público, tem **1 commit**, sem releases, sem issues abertas visíveis, e a estrutura principal é `README.md` + pasta `doc` com um `logfree.txt`; nêo há sinais, na árvore exibida, de backend, frontend, migrations, testes ou código executável.
+Analisei o `linnoff88-dev/logfree` e, hoje, ele está muito mais próximo de um **PRD/blueprint de produto** do que de um sistema implementado. O repositório é público, tem **1 commit**, sem releases, sem issues abertas visíveis, e a estrutura principal é `README.md` + pasta `doc` com um `logfree.txt`; nêo há sinais, na árvore exibida, de backend, frontend, migrations, testes ou código executável.
 
 **Leitura executiva:** a ideia é boa, o recorte de problema é forte, o MVP está muito bem delimitado, mas ainda falta transformar isso em **arquitetura executável, contratos técnicos e prova operacional**. O texto do README define com clareza o problema, a proposta de valor, o MVP, a modelagem inicial, o algoritmo sem IA, a stack e um roadmap por fases.
 

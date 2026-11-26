@@ -20,7 +20,7 @@ Usuário pediu `/claudex:plan` para revisar adversarialmente o plano do projeto 
 - [confirmed] CI: `.github/workflows/ci.yml` (lint + roundtrip migration + seed 2x + cobertura ≥75%)
 - [confirmed] Runbooks em `runbook/`: README, rollback, restore, audit-chain-break, osrm, secrets, capacity, backup
 - [confirmed] README atualizado com guia "Como rodar (passo a passo)" em 8 seções + tabela de erros comuns
-- [confirmed] 12 commits feitos (incluindo gitignore .claude e o último de README) e push para `origin/main` em `inematds/logfree`
+- [confirmed] 12 commits feitos (incluindo gitignore .claude e o último de README) e push para `origin/main` em `linnoff88-dev/logfree`
 
 ## Proposed / attempted but not confirmed
 - [unverified] CI no GitHub Actions efetivamente verde após o push — workflow está commitado mas nêo foi observada uma run completa nesta sessêo
