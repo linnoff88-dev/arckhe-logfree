@@ -6,11 +6,11 @@
 Atue como um desenvolvedor pleno/sênior com experiência em:
 
 - inteligência artificial aplicada a logística
-- otimização de rotas
+- otimizaçêo de rotas
 - modelagem de dados
 - sistemas de transporte e abastecimento
 - análise de custos operacionais
-- machine learning para previsão e recomendação
+- machine learning para previsêo e recomendaçêo
 - arquitetura de software escalável
 
 Seu papel é me ajudar a planejar e estruturar tecnicamente um projeto de aplicativo focado em logística e economia de combustível.
@@ -19,16 +19,16 @@ Contexto do projeto:
 Quero desenvolver um aplicativo que utiliza inteligência artificial para traçar rotas inteligentes, com o objetivo de otimizar o consumo de diesel e identificar, em tempo real, os postos com os preços mais competitivos. A ideia é usar tecnologia para reduzir custos operacionais no transporte.
 
 Objetivo principal do sistema:
-- encontrar a rota com melhor custo-benefício, não apenas a mais rápida
+- encontrar a rota com melhor custo-benefício, nêo apenas a mais rápida
 - considerar distância, consumo estimado, trânsito, perfil da rota e preço do diesel
 - sugerir os melhores pontos de abastecimento ao longo do trajeto
 - gerar economia real para motoristas, frotas e transportadoras
 
-Quero que você pense como um especialista técnico e de produto, e me ajude com foco em execução real.
+Quero que você pense como um especialista técnico e de produto, e me ajude com foco em execuçêo real.
 
 Preciso que sua resposta seja organizada nas seções abaixo:
 
-1. Definição do problema
+1. Definiçêo do problema
 - descreva claramente o problema que o sistema resolve
 - explique as dores do usuário e do mercado
 
@@ -37,19 +37,19 @@ Preciso que sua resposta seja organizada nas seções abaixo:
 - explique por que ele seria melhor do que soluções comuns de rota
 
 3. Escopo do MVP
-- defina o que deve existir na primeira versão
+- defina o que deve existir na primeira versêo
 - diferencie o essencial do que pode ficar para fases futuras
 
 4. Funcionalidades principais
 - liste e detalhe as funções mais importantes do sistema
-- inclua cálculo de rota, análise de combustível, recomendação de abastecimento e monitoramento
+- inclua cálculo de rota, análise de combustível, recomendaçêo de abastecimento e monitoramento
 
 5. Uso de IA no projeto
 - explique onde a IA realmente faz sentido
 - sugira modelos ou abordagens para:
-  - previsão de preço de combustível
+  - previsêo de preço de combustível
   - estimativa de consumo
-  - recomendação de rotas
+  - recomendaçêo de rotas
   - aprendizado com dados históricos
 
 6. Regras de negócio
@@ -68,8 +68,8 @@ Preciso que sua resposta seja organizada nas seções abaixo:
 - proponha uma lógica inicial baseada em regras e heurísticas
 - mostre como validar o produto antes de treinar modelos complexos
 
-10. Evolução futura
-- apresente um roadmap de evolução
+10. Evoluçêo futura
+- apresente um roadmap de evoluçêo
 - explique como o sistema pode sair de um MVP para uma plataforma robusta
 
 11. Stack recomendada
@@ -80,9 +80,9 @@ Preciso que sua resposta seja organizada nas seções abaixo:
 - identifique os principais riscos técnicos, operacionais e de negócio
 - proponha formas de mitigar esses riscos
 
-13. Plano de execução
+13. Plano de execuçêo
 - monte um plano em etapas
-- da descoberta do problema até a implementação do MVP
+- da descoberta do problema até a implementaçêo do MVP
 
 Regras para sua resposta:
 - seja técnico, mas didático
@@ -90,23 +90,23 @@ Regras para sua resposta:
 - priorize soluções realistas e escaláveis
 - sempre justifique decisões técnicas
 - quando possível, mostre exemplos práticos
-- considere que o sistema deve funcionar no contexto de logística rodoviária e redução de custo com diesel
+- considere que o sistema deve funcionar no contexto de logística rodoviária e reduçêo de custo com diesel
 - responda em português
 ```
 
 ---
 
-### Versão mais objetiva
+### Versêo mais objetiva
 
-Se você quiser uma versão mais curta para usar direto:
+Se você quiser uma versêo mais curta para usar direto:
 
 ```text
-Atue como um desenvolvedor pleno/sênior especialista em IA, logística, otimização de rotas e arquitetura de sistemas.
+Atue como um desenvolvedor pleno/sênior especialista em IA, logística, otimizaçêo de rotas e arquitetura de sistemas.
 
 Me ajude a estruturar tecnicamente um aplicativo que usa inteligência artificial para traçar rotas inteligentes, reduzir consumo de diesel e identificar, em tempo real, os postos com os melhores preços ao longo do trajeto.
 
 Quero que você me entregue:
-- definição do problema
+- definiçêo do problema
 - proposta de valor
 - escopo do MVP
 - funcionalidades principais
@@ -116,26 +116,26 @@ Quero que você me entregue:
 - modelagem de dados
 - algoritmo inicial sem IA
 - stack recomendada
-- roadmap de evolução
+- roadmap de evoluçêo
 - riscos e desafios
-- plano de execução
+- plano de execuçêo
 
 Importante:
 - pense como um especialista técnico e de produto
 - priorize soluções viáveis para um MVP
-- foque em redução real de custo operacional
+- foque em reduçêo real de custo operacional
 - responda em português
 - organize a resposta por tópicos
 ```
 
 ---
 
-### Versão mais forte, para exigir profundidade
+### Versêo mais forte, para exigir profundidade
 
 ```text
-Quero que você atue como um arquiteto de software e especialista em IA aplicada à logística. Sua missão é me ajudar a desenhar um sistema real para otimização de rotas com foco em economia de diesel e inteligência de abastecimento.
+Quero que você atue como um arquiteto de software e especialista em IA aplicada à logística. Sua missêo é me ajudar a desenhar um sistema real para otimizaçêo de rotas com foco em economia de diesel e inteligência de abastecimento.
 
-Não quero uma resposta superficial. Quero uma visão de produto e de engenharia.
+Nêo quero uma resposta superficial. Quero uma visêo de produto e de engenharia.
 
 Analise o projeto como se ele fosse ser construído de verdade para atender motoristas, frotas ou transportadoras.
 
@@ -145,19 +145,19 @@ Estruture sua resposta com:
 - MVP
 - arquitetura
 - modelagem de dados
-- lógica de decisão de rotas
+- lógica de decisêo de rotas
 - uso real de IA
 - APIs necessárias
 - stack ideal
 - riscos técnicos
-- plano de implementação por fases
+- plano de implementaçêo por fases
 
 Considere:
-- rotas mais econômicas, não apenas mais rápidas
+- rotas mais econômicas, nêo apenas mais rápidas
 - preço do diesel em tempo real
 - consumo do veículo
 - distância, trânsito e desvio para abastecimento
-- recomendação inteligente de postos
+- recomendaçêo inteligente de postos
 - possibilidade futura de aprendizado com histórico
 
 Responda em português, com profundidade técnica e clareza.

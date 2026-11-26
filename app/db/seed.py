@@ -241,14 +241,14 @@ def _upsert_admin_seed(s: Session, cidade: Cidade,
 
 
 def _upsert_precos(s: Session, postos: list[Posto], combs: dict[str, Combustivel]) -> None:
-    """Para cada posto seed, gera preço atual + 1 histórico antigo (se ainda não houver)."""
+    """Para cada posto seed, gera preço atual + 1 histórico antigo (se ainda nêo houver)."""
     now = datetime.now(tz=UTC)
     for idx, posto in enumerate(postos):
         for codigo, base in PRECOS_BASE_CENTS.items():
             c = combs.get(codigo)
             if c is None:
                 continue
-            # spread por posto: pequena variação determinística para o seed
+            # spread por posto: pequena variaçêo determinística para o seed
             valor = base + ((idx * 7) % 30) - 15
             existing = s.execute(
                 select(Preco).where(

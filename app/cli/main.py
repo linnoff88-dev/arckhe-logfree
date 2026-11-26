@@ -74,7 +74,7 @@ def audit_verify() -> None:
 @click.option("--motivo", required=True)
 def audit_unblock(approver: str, motivo: str) -> None:
     if not get_settings().audit_unblock_key:
-        raise click.ClickException("AUDIT_UNBLOCK_KEY não configurado")
+        raise click.ClickException("AUDIT_UNBLOCK_KEY nêo configurado")
     sm = get_sessionmaker()
     with sm() as s:
         ev = audit_unblock_event(s, approver, motivo)

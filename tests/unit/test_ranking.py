@@ -91,7 +91,7 @@ def test_autonomia_invalida_no_rank():
 
 
 def test_autonomia_zero_no_rank_levanta():
-    # autonomia <= 0 é input inválido pra função rank
+    # autonomia <= 0 é input inválido pra funçêo rank
     bad_ctx = _ctx(autonomia_restante_km=200)
     bad_ctx.autonomia_restante_km = 0
     with pytest.raises(ValueError):
@@ -176,7 +176,7 @@ def test_ordenacao_estavel_em_empate_estrito():
     ctx = _ctx(distancia_metodo=DistanciaMetodo.OSRM)
     r1 = rank([p1, p2], ctx, top_n=3)
     r2 = rank([p2, p1], ctx, top_n=3)
-    # mesmos custos → ambos resultados; só checamos que não trava
+    # mesmos custos → ambos resultados; só checamos que nêo trava
     assert {r.posto_id for r in r1.top} == {1, 2}
     assert {r.posto_id for r in r2.top} == {1, 2}
 

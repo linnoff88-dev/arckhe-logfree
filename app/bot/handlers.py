@@ -92,8 +92,8 @@ def cmd_start(s: Session, telegram_id: int, nome_telegram: str = "") -> BotRespo
         text=(
             "Bem-vindo ao LogFree.\n\n"
             "Para usar, preciso seu consentimento LGPD: aceito guardar consultas "
-            "(localização, combustível, escolha) por até 90 dias para melhorar a "
-            "recomendação. Você pode pedir /apagar_meus_dados a qualquer momento.\n\n"
+            "(localizaçêo, combustível, escolha) por até 90 dias para melhorar a "
+            "recomendaçêo. Você pode pedir /apagar_meus_dados a qualquer momento.\n\n"
             "Mande /aceitar_termos para confirmar."
         )
     )
@@ -108,7 +108,7 @@ def cmd_aceitar_termos(s: Session, telegram_id: int) -> BotResponse:
     u.opt_in_lgpd = 1
     u.opt_in_at = utcnow_iso()
     write_event(s, usuario_id=u.id, acao="opt_in_lgpd", recurso="usuario", recurso_id=u.id)
-    return BotResponse(text="Obrigado. Use /melhor <combustível> e me mande sua localização.")
+    return BotResponse(text="Obrigado. Use /melhor <combustível> e me mande sua localizaçêo.")
 
 
 def cmd_apagar(s: Session, telegram_id: int) -> BotResponse:
@@ -117,7 +117,7 @@ def cmd_apagar(s: Session, telegram_id: int) -> BotResponse:
         return BotResponse(text="Nada para apagar.")
     apagar_meus_dados(s, u.id, motivo="user_request")
     return BotResponse(
-        text="Seus dados foram apagados. Não te enviaremos mais mensagens.\n"
+        text="Seus dados foram apagados. Nêo te enviaremos mais mensagens.\n"
              "Para usar de novo, mande /start."
     )
 
@@ -128,7 +128,7 @@ def cmd_exportar(s: Session, telegram_id: int) -> BotResponse:
         return BotResponse(text="Cadastre-se primeiro com /start.")
     data = exportar_meus_dados(s, u.id)
     payload = export_to_json(data)
-    # Em produção: gerar link assinado com TTL 72h e mandar por mensagem.
+    # Em produçêo: gerar link assinado com TTL 72h e mandar por mensagem.
     # No MVP local: devolver os primeiros 1500 chars como prévia.
     return BotResponse(
         text=f"Seus dados (prévia):\n```\n{payload[:1500]}\n```"
@@ -151,7 +151,7 @@ def cmd_melhor(
         return BotResponse(text=f"Combustível inválido. Use um destes: {codigos}.")
     _set_state(s, u.id, "melhor_em_andamento", {"combustivel": combustivel_codigo})
     return BotResponse(
-        text="Mande sua localização atual e me diga sua autonomia restante "
+        text="Mande sua localizaçêo atual e me diga sua autonomia restante "
              "(ex.: 'autonomia 60' ou 'autonomia 200 cheio').",
         expects_location=True,
     )

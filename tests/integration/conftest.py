@@ -1,4 +1,4 @@
-"""Conftest dos testes de integração: DB temporário com migrations + seed."""
+"""Conftest dos testes de integraçêo: DB temporário com migrations + seed."""
 from __future__ import annotations
 
 import subprocess

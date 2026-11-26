@@ -2,8 +2,8 @@
 
 ## Quando usar
 - Restore-test semanal falhou.
-- Corrupção do volume de produção.
-- Rollback caminho C (migração destrutiva sem downgrade).
+- Corrupçêo do volume de produçêo.
+- Rollback caminho C (migraçêo destrutiva sem downgrade).
 
 ## Procedimento
 
@@ -19,7 +19,7 @@
    # Esperado: 'ok'
    ```
 
-3. **Substitui DB de produção.**
+3. **Substitui DB de produçêo.**
    ```bash
    mv /data/logfree/logfree.sqlite /data/logfree/logfree.sqlite.broken
    cp /tmp/restore.sqlite /data/logfree/logfree.sqlite
@@ -53,4 +53,4 @@
 
 ## Quando escalar
 - Snapshot mais recente falhou `integrity_check`.
-- Não há snapshot menos de 24h atrás.
+- Nêo há snapshot menos de 24h atrás.

@@ -1,4 +1,4 @@
-"""Dependências FastAPI: autenticação, autorização, sessão."""
+"""Dependências FastAPI: autenticaçêo, autorizaçêo, sessêo."""
 from __future__ import annotations
 
 import secrets
@@ -71,8 +71,8 @@ async def auth_required(
         default=None, alias="X-Bot-User-Telegram-Id"
     ),
 ) -> AuthIdentity:
-    """(a) cookie de sessão ou (b) bot service token + X-Bot-User-Telegram-Id."""
-    # (a) cookie de sessão
+    """(a) cookie de sessêo ou (b) bot service token + X-Bot-User-Telegram-Id."""
+    # (a) cookie de sessêo
     cookie = request.cookies.get("logfree_session")
     if cookie:
         uid = parse_session_cookie(cookie)
@@ -104,7 +104,7 @@ async def auth_required(
             raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="usuário apagado")
         return AuthIdentity(usuario=u, source="bot_token")
 
-    raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="autenticação requerida")
+    raise HTTPException(status.HTTP_401_UNAUTHORIZED, detail="autenticaçêo requerida")
 
 
 def require_perfil(*perfis: str):
@@ -132,7 +132,7 @@ def require_authz(recurso: str, acao: str, escopo_cidade: bool = True):
         if u.perfil == "admin":
             return identity
         if u.perfil == "operador" and escopo_cidade:
-            # validação cross-city é responsabilidade do handler usando a cidade alvo
+            # validaçêo cross-city é responsabilidade do handler usando a cidade alvo
             return identity
         emit(
             "authz.deny",
@@ -140,5 +140,5 @@ def require_authz(recurso: str, acao: str, escopo_cidade: bool = True):
             recurso=recurso,
             acao=acao,
         )
-        raise HTTPException(status.HTTP_403_FORBIDDEN, detail="não autorizado")
+        raise HTTPException(status.HTTP_403_FORBIDDEN, detail="nêo autorizado")
     return _dep

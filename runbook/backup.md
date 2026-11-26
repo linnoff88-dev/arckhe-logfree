@@ -1,14 +1,14 @@
 # Backup falhou (P1)
 
 ## Sintoma
-- Job de backup diário não rodou ou retornou erro.
+- Job de backup diário nêo rodou ou retornou erro.
 - Idade do último snapshot ok > 24h.
 
 ## O que verificar
 1. `/internal/metrics` → gauge `backup.last_ok_iso` (idade).
 2. Logs do job: `evento_audit` com `acao='snapshot.create'` na última hora.
 3. Espaço em disco no destino do backup.
-4. Chave de encriptação (`age` key) acessível?
+4. Chave de encriptaçêo (`age` key) acessível?
 
 ## Comandos seguros
 ```bash

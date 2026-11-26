@@ -69,7 +69,7 @@ def test_apagar_idempotente():
         u = _seed_user(s)
         apagar_meus_dados(s, u.id)
         s.commit()
-        # 2a chamada não levanta
+        # 2a chamada nêo levanta
         apagar_meus_dados(s, u.id)
         s.commit()
 
@@ -158,7 +158,7 @@ def test_trigger_bloqueia_consulta_para_tombstoned():
                     )
                 )
                 s.commit()
-                raise AssertionError("trigger não bloqueou")
+                raise AssertionError("trigger nêo bloqueou")
             except Exception as exc:
                 assert "tombstoned" in str(exc).lower()
                 s.rollback()

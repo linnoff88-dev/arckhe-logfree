@@ -40,11 +40,11 @@ router = APIRouter()
 
 
 def _resolve_cidade(db: Session, lat: float, lng: float, cidade_id: int | None) -> Cidade:
-    """Resolve cidade pela bbox da localização (ou explícita)."""
+    """Resolve cidade pela bbox da localizaçêo (ou explícita)."""
     if cidade_id is not None:
         c = db.get(Cidade, cidade_id)
         if c is None:
-            raise HTTPException(status.HTTP_404_NOT_FOUND, detail="cidade não encontrada")
+            raise HTTPException(status.HTTP_404_NOT_FOUND, detail="cidade nêo encontrada")
         return c
     c = db.execute(
         select(Cidade).where(
@@ -57,7 +57,7 @@ def _resolve_cidade(db: Session, lat: float, lng: float, cidade_id: int | None) 
     if c is None:
         raise HTTPException(
             status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail="localização fora de cidade atendida",
+            detail="localizaçêo fora de cidade atendida",
         )
     return c
 

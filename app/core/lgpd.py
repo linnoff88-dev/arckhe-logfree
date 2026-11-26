@@ -1,13 +1,13 @@
-"""Apagamento e exportação LGPD (PLAN.md item 9).
+"""Apagamento e exportaçêo LGPD (PLAN.md item 9).
 
 apagar_meus_dados:
 1. Drena fila assíncrona filtrando o usuario_id (caller faz antes de chamar).
-2. Transação única: tombstone, anonimiza usuário, apaga vinculos, anonimiza consultas.
+2. Transaçêo única: tombstone, anonimiza usuário, apaga vinculos, anonimiza consultas.
 3. Trigger SQL bloqueia INSERTs futuros — mesmo motorista (telegram_id zerado).
 4. Audit event 'data_delete'.
 
 exportar_meus_dados: monta JSON com tudo do usuário.
-replay_tombstones: re-aplica anonimização lendo tombstone_usuario depois de restore.
+replay_tombstones: re-aplica anonimizaçêo lendo tombstone_usuario depois de restore.
 """
 from __future__ import annotations
 
@@ -40,15 +40,15 @@ class ExportData:
 
 
 def apagar_meus_dados(s: Session, usuario_id: int, motivo: str = "user_request") -> None:
-    """Hard delete LGPD: tombstone + anonimização + bloqueio futuro.
+    """Hard delete LGPD: tombstone + anonimizaçêo + bloqueio futuro.
 
     Caller deve ter drenado a fila assíncrona de `consulta` para esse usuário antes.
-    Toda a operação fica numa transação única (commit pelo session_scope do caller
-    ou aqui mesmo). Audit gravado dentro da mesma transação.
+    Toda a operaçêo fica numa transaçêo única (commit pelo session_scope do caller
+    ou aqui mesmo). Audit gravado dentro da mesma transaçêo.
     """
     u = s.get(Usuario, usuario_id)
     if u is None:
-        raise ValueError(f"usuario {usuario_id} não encontrado")
+        raise ValueError(f"usuario {usuario_id} nêo encontrado")
     if u.tombstoned:
         return  # idempotente
 
@@ -57,7 +57,7 @@ def apagar_meus_dados(s: Session, usuario_id: int, motivo: str = "user_request")
     if s.get(TombstoneUsuario, usuario_id) is None:
         s.add(TombstoneUsuario(usuario_id=usuario_id, criado_em=now, motivo=motivo[:40]))
 
-    # Anonimização do usuário (zero PII).
+    # Anonimizaçêo do usuário (zero PII).
     s.execute(
         update(Usuario)
         .where(Usuario.id == usuario_id)
@@ -84,7 +84,7 @@ def apagar_meus_dados(s: Session, usuario_id: int, motivo: str = "user_request")
         synchronize_session=False
     )
 
-    # Anonimização das consultas: zera lat/lng e top_n_resultado_json.
+    # Anonimizaçêo das consultas: zera lat/lng e top_n_resultado_json.
     s.execute(
         update(Consulta)
         .where(Consulta.usuario_id == usuario_id)
@@ -115,7 +115,7 @@ def is_tombstoned(s: Session, usuario_id: int) -> bool:
 def exportar_meus_dados(s: Session, usuario_id: int) -> ExportData:
     u = s.get(Usuario, usuario_id)
     if u is None:
-        raise ValueError(f"usuario {usuario_id} não encontrado")
+        raise ValueError(f"usuario {usuario_id} nêo encontrado")
     veiculos = list(
         s.execute(select(UsuarioVeiculo).where(UsuarioVeiculo.usuario_id == usuario_id)).scalars()
     )

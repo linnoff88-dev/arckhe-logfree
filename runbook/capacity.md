@@ -2,7 +2,7 @@
 
 ## Volume de dados (Railway/Fly)
 
-- Provisão inicial: 10 GB.
+- Provisêo inicial: 10 GB.
 - Alertas: 80% (P2), 90% (P1).
 - Cleanup automático:
   - snapshots `pre-deploy-*` > 30 dias removidos.
@@ -29,7 +29,7 @@ ls -lh /data/logfree/logfree.sqlite-wal
 ## Audit append-only copy
 
 - Volume separado, write-only token.
-- Retenção 365 dias online; arquivamento p/ storage frio depois de 90 dias.
+- Retençêo 365 dias online; arquivamento p/ storage frio depois de 90 dias.
 - Quota 5 GB.
 
 ## Backups
@@ -41,12 +41,12 @@ ls -lh /data/logfree/logfree.sqlite-wal
 ## Fotos de abastecimento
 
 - Teto 1 GB.
-- Cleanup de fotos órfãs (sem `abastecimento_relatado`) após 7 dias.
+- Cleanup de fotos órfês (sem `abastecimento_relatado`) após 7 dias.
 - Redimensionamento máx 1024px no upload.
 
 ## Comportamento disk-full
 
-- Aplicação detecta `< 5%` livre → recusa novas escritas com 503 "manutenção".
+- Aplicaçêo detecta `< 5%` livre → recusa novas escritas com 503 "manutençêo".
 - Grava `evento_audit('disk_full')`.
 - Alerta P1.
 

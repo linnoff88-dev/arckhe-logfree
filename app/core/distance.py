@@ -1,4 +1,4 @@
-"""Distância Haversine — função pura, fallback do OSRM (item 12 do PLAN.md)."""
+"""Distância Haversine — funçêo pura, fallback do OSRM (item 12 do PLAN.md)."""
 from __future__ import annotations
 
 import math

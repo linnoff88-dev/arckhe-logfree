@@ -13,7 +13,7 @@ API:
 Modos do verificador:
 - íntegra → tudo ok
 - chain_break → tampering ou registro perdido (quarentena)
-- verifier_error → erro do próprio verificador (não derruba prod)
+- verifier_error → erro do próprio verificador (nêo derruba prod)
 """
 from __future__ import annotations
 
@@ -104,7 +104,7 @@ class VerifyResult:
 def verify_chain(s: Session) -> VerifyResult:
     """Re-calcula o hash de cada linha em ordem e compara com o gravado.
 
-    Erros de I/O viram verifier_error (não chain_break).
+    Erros de I/O viram verifier_error (nêo chain_break).
     """
     try:
         rows = list(s.execute(select(EventoAudit).order_by(EventoAudit.id.asc())).scalars())

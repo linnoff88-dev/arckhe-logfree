@@ -158,7 +158,7 @@ def test_csv_import_rollback_em_linha_invalida(client):
     assert body["ok"] is False
     assert body["status"] == "rollback"
 
-    # Postos OK não devem ter sido inseridos (rollback total)
+    # Postos OK nêo devem ter sido inseridos (rollback total)
     from app.db.base import get_sessionmaker
     from app.db.models import Posto
     sm = get_sessionmaker()

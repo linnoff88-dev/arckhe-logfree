@@ -1,7 +1,7 @@
 """Rate limit token-bucket in-process (PLAN.md item 39).
 
 Cada bucket tem chave (ex.: "melhor:user:42", "ip:1.2.3.4"), capacidade e
-recarga por segundo. Não usa SQLite no caminho hot.
+recarga por segundo. Nêo usa SQLite no caminho hot.
 """
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""Job de anonimização de `consulta` após retenção (PLAN.md item 9)."""
+"""Job de anonimizaçêo de `consulta` após retençêo (PLAN.md item 9)."""
 from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta

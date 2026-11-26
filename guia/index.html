@@ -121,41 +121,41 @@
   <div class="wrap">
     <div>
       <span class="chip">Logística · última milha</span>
-      <h1>O posto mais barato <span class="amb">pra você</span>, não pra bomba</h1>
-      <p class="lead">API FastAPI + bot Telegram que calcula o custo real por km — preço do litro, consumo do veículo e desvio até o posto — e indica o melhor posto pra frota de moto, carro ou caminhão leve em última milha.</p>
+      <h1>O posto mais barato <span class="amb">pra você</span>, nêo pra bomba</h1>
+      <p class="lead">API FastAPI + bot Telegram que calcula o custo real por km — preço do litro, consumo do veículo e desvio até o posto — e indica o melhor posto pra frota de moto, carro ou caminhêo leve em última milha.</p>
       <div class="cta">
         <a class="btn" href="#guia">Começar o guia</a>
         <a class="btn ghost" href="https://github.com/inematds/logfree" target="_blank" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
-    <figure><img src="assets/hero.png" alt="Ilustração do LogFree — posto de combustível e frota de última milha"></figure>
+    <figure><img src="assets/hero.png" alt="Ilustraçêo do LogFree — posto de combustível e frota de última milha"></figure>
   </div>
 </header>
 
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
-  <h2>Custo efetivo por km, não preço bruto na bomba</h2>
+  <h2>Custo efetivo por km, nêo preço bruto na bomba</h2>
   <p class="sub">Waze e Google mostram rota. Apps de preço mostram preço. Nenhum junta os dois com o perfil do veículo e o contexto de entrega urbana. O LogFree junta.</p>
   <div class="grid g3">
-    <div class="card"><h3>⛽ Custo real por km</h3><p>Considera preço do litro, consumo (km/l) do veículo e o desvio de ida e volta até o posto — não só o preço na placa.</p></div>
-    <div class="card"><h3>🤖 Bot Telegram</h3><p>O motorista consulta pelo Telegram (onde ele já vive): envia localização e recebe o top posto recomendado, com auth por token de serviço.</p></div>
-    <div class="card"><h3>🔒 Admin web com auditoria</h3><p>Painel HTMX pra operador atualizar preço do dia, com login por sessão, CSRF, isolamento por cidade e trilha de auditoria em cadeia de hash.</p></div>
+    <div class="card"><h3>⛽ Custo real por km</h3><p>Considera preço do litro, consumo (km/l) do veículo e o desvio de ida e volta até o posto — nêo só o preço na placa.</p></div>
+    <div class="card"><h3>🤖 Bot Telegram</h3><p>O motorista consulta pelo Telegram (onde ele já vive): envia localizaçêo e recebe o top posto recomendado, com auth por token de serviço.</p></div>
+    <div class="card"><h3>🔒 Admin web com auditoria</h3><p>Painel HTMX pra operador atualizar preço do dia, com login por sessêo, CSRF, isolamento por cidade e trilha de auditoria em cadeia de hash.</p></div>
   </div>
 </div></section>
 
 <section id="fluxo"><div class="wrap">
   <span class="chip">Como funciona</span>
   <h2>Do pedido ao posto recomendado</h2>
-  <p class="sub">Fluxo do endpoint principal <code>POST /melhor-posto</code>: recebe posição + combustível, calcula custo efetivo por posto ativo da cidade e devolve o ranking.</p>
+  <p class="sub">Fluxo do endpoint principal <code>POST /melhor-posto</code>: recebe posiçêo + combustível, calcula custo efetivo por posto ativo da cidade e devolve o ranking.</p>
   <div class="flow">
     <span>Motorista envia lat/lng + combustível</span><span class="arr">→</span>
-    <span>Auth (sessão admin ou X-Bot-Token)</span><span class="arr">→</span>
+    <span>Auth (sessêo admin ou X-Bot-Token)</span><span class="arr">→</span>
     <span>Filtra postos ativos na bbox da cidade</span><span class="arr">→</span>
     <span>Calcula custo efetivo por km (Haversine)</span><span class="arr">→</span>
     <span>Ordena e retorna top N</span>
   </div>
   <div class="grid g3" style="margin-top:26px">
-    <div class="card"><h3>📥 Entrada</h3><p>Posição, combustível, autonomia restante e modo de abastecimento (completo/parcial), via API ou bot.</p></div>
+    <div class="card"><h3>📥 Entrada</h3><p>Posiçêo, combustível, autonomia restante e modo de abastecimento (completo/parcial), via API ou bot.</p></div>
     <div class="card"><h3>🧮 Cálculo</h3><p>Distância até cada posto, litros do desvio, custo do desvio rateado pela capacidade do tanque, soma ao preço do litro.</p></div>
     <div class="card"><h3>📤 Saída</h3><p>Top N postos por custo efetivo, com preço, distância, desvio e economia estimada vs. o mais próximo.</p></div>
   </div>
@@ -170,7 +170,7 @@
 <span class="k">python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"</span></pre></div>
-    <div class="card"><h3>.env local</h3><p>Copiado do exemplo — SQLite local, cookie secret, token do bot de serviço.</p><pre><span class="c"># configuração</span>
+    <div class="card"><h3>.env local</h3><p>Copiado do exemplo — SQLite local, cookie secret, token do bot de serviço.</p><pre><span class="c"># configuraçêo</span>
 <span class="k">cp .env.example .env</span></pre></div>
     <div class="card"><h3>Token do Telegram (opcional)</h3><p>Só necessário se for testar o bot de verdade — sem ele, o webhook responde 503 e os testes seguem cobertos por mock.</p><pre><span class="c"># em .env</span>
 <span class="k">TG_BOT_TOKEN=&lt;seu-token-do-BotFather&gt;
@@ -228,7 +228,7 @@ cp .env.example .env</span>  <span class="c"># pule o venv se já existir .venv<
 
   <div class="step"><div class="b">5</div><div>
     <h3>Admin web</h3>
-    <p>Painel HTMX pra ver cidades, editar preço de posto e acompanhar métricas — login errado, CSRF ausente e cross-city são bloqueados e cobertos por teste.</p>
+    <p>Painel HTMX pra ver cidades, editar preço de posto e acompanhar métricas — login errado, CSRF ausente e cross-city sêo bloqueados e cobertos por teste.</p>
 <pre><span class="k">http://localhost:8000/admin/login</span>  <span class="c"># entre com admin@local + a senha do bootstrap</span></pre>
   </div></div>
 
@@ -243,7 +243,7 @@ cp .env.example .env</span>  <span class="c"># pule o venv se já existir .venv<
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
-    <h3>CLI de operação</h3>
+    <h3>CLI de operaçêo</h3>
     <p>Comandos operacionais: auditoria, break-glass, feature flags e replay pós-restore.</p>
 <pre><span class="k">logfree audit-verify</span>                                            <span class="c"># checa cadeia hash do evento_audit</span>
 <span class="k">logfree audit-unblock --approver=admin@x --motivo="..."</span>         <span class="c"># break-glass (precisa AUDIT_UNBLOCK_KEY)</span>
@@ -267,7 +267,7 @@ cp .env.example .env</span>  <span class="c"># pule o venv se já existir .venv<
 <section id="exemplos"><div class="wrap">
   <span class="chip">Exemplos</span>
   <h2>Endpoints principais e erros comuns</h2>
-  <p class="sub">O projeto ainda não tem screenshots publicados — os exemplos abaixo são requisição/resposta reais do próprio README.</p>
+  <p class="sub">O projeto ainda nêo tem screenshots publicados — os exemplos abaixo sêo requisiçêo/resposta reais do próprio README.</p>
   <div class="ex">
     <figure>
 <pre><span class="c"># sem auth → 401</span>
@@ -278,18 +278,18 @@ cp .env.example .env</span>  <span class="c"># pule o venv se já existir .venv<
        "autonomia_restante_km": 200,
        "modo_abastecimento": "completo",
        "top_n": 3}'</span></pre>
-      <figcaption>POST /melhor-posto sem token de serviço nem sessão admin — bloqueado por design.</figcaption>
+      <figcaption>POST /melhor-posto sem token de serviço nem sessêo admin — bloqueado por design.</figcaption>
     </figure>
     <figure>
       <table class="err">
-        <tr><th>Sintoma</th><th>Solução</th></tr>
+        <tr><th>Sintoma</th><th>Soluçêo</th></tr>
         <tr><td><code>no such table: alembic_version</code></td><td><code>alembic upgrade head</code></td></tr>
         <tr><td><code>combustivel desconhecido</code></td><td><code>alembic upgrade head</code> (gera os 6 combustíveis)</td></tr>
         <tr><td><code>flock ocupado</code> ao iniciar uvicorn</td><td><code>pkill -f uvicorn</code></td></tr>
         <tr><td><code>401</code> com bot token</td><td>confira <code>X-Bot-Token</code> e <code>opt_in_lgpd=1</code> do usuário</td></tr>
         <tr><td><code>403</code> em /melhor-posto</td><td>bot precisa mandar <code>/aceitar_termos</code> antes de <code>/melhor</code></td></tr>
       </table>
-      <figcaption>Erros comuns e a solução, direto do runbook do projeto.</figcaption>
+      <figcaption>Erros comuns e a soluçêo, direto do runbook do projeto.</figcaption>
     </figure>
   </div>
 </div></section>
@@ -299,10 +299,10 @@ cp .env.example .env</span>  <span class="c"># pule o venv se já existir .venv<
   <h2>Do MVP à fase de inteligência</h2>
   <p class="sub">Fases do plano do projeto (ver <code>PLAN.md</code> no repo).</p>
   <div class="phase"><div class="tag">Fase 1</div><div class="d"><strong>MVP</strong><span>Cidade piloto, bot + web, cadastro manual de postos e preços.</span></div></div>
-  <div class="phase"><div class="tag">Fase 2</div><div class="d"><strong>Escala operacional</strong><span>Migração pra Supabase (Postgres + PostGIS), multi-cidade, atualização de preço pelo bot, OCR de bomba.</span></div></div>
-  <div class="phase"><div class="tag">Fase 3</div><div class="d"><strong>Inteligência</strong><span>Previsão de preço por posto, detecção de anomalia, ranking personalizado por histórico do motorista.</span></div></div>
-  <div class="phase"><div class="tag">Fase 4</div><div class="d"><strong>Frota</strong><span>Dashboard de economia agregada, integração com rastreador, relatório fiscal, API pra TMS.</span></div></div>
-  <div class="phase"><div class="tag">Fase 5</div><div class="d"><strong>Rede</strong><span>Expansão nacional, freemium, parcerias com redes de postos.</span></div></div>
+  <div class="phase"><div class="tag">Fase 2</div><div class="d"><strong>Escala operacional</strong><span>Migraçêo pra Supabase (Postgres + PostGIS), multi-cidade, atualizaçêo de preço pelo bot, OCR de bomba.</span></div></div>
+  <div class="phase"><div class="tag">Fase 3</div><div class="d"><strong>Inteligência</strong><span>Previsêo de preço por posto, detecçêo de anomalia, ranking personalizado por histórico do motorista.</span></div></div>
+  <div class="phase"><div class="tag">Fase 4</div><div class="d"><strong>Frota</strong><span>Dashboard de economia agregada, integraçêo com rastreador, relatório fiscal, API pra TMS.</span></div></div>
+  <div class="phase"><div class="tag">Fase 5</div><div class="d"><strong>Rede</strong><span>Expansêo nacional, freemium, parcerias com redes de postos.</span></div></div>
 </div></section>
 
 <footer>

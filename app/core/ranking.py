@@ -1,4 +1,4 @@
-"""Motor de decisão LogFree — função pura, sem I/O.
+"""Motor de decisêo LogFree — funçêo pura, sem I/O.
 
 Implementa fórmulas (b) do PLAN.md item 10/11:
 
@@ -152,7 +152,7 @@ def _calcular_d_km(p: PostoCandidato, ctx: ContextoRanking) -> float:
 
 
 def _bandas_sobrepoem(a: ResultadoPosto, b: ResultadoPosto) -> bool:
-    """Empate técnico: intervalos [p10,p90] tem interseção."""
+    """Empate técnico: intervalos [p10,p90] tem interseçêo."""
     return not (a.custo_p90 < b.custo_p10 or b.custo_p90 < a.custo_p10)
 
 
@@ -233,7 +233,7 @@ def rank(
             )
         )
 
-    # ordenação estável: por p50, depois por preco bruto, depois por observed_at (newest)
+    # ordenaçêo estável: por p50, depois por preco bruto, depois por observed_at (newest)
     aceitos.sort(
         key=lambda r: (r.custo_p50, r.preco_centavos, -r.idade_horas)
     )

@@ -1,4 +1,4 @@
-"""Aplicação FastAPI principal — owner lease + healthcheck + endpoints."""
+"""Aplicaçêo FastAPI principal — owner lease + healthcheck + endpoints."""
 from __future__ import annotations
 
 import logging

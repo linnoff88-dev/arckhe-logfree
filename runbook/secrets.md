@@ -1,6 +1,6 @@
-# Rotação de segredos
+# Rotaçêo de segredos
 
-Janelas de duplo-aceite onde aplicável. Toda rotação grava `evento_audit('secret_rotation')`.
+Janelas de duplo-aceite onde aplicável. Toda rotaçêo grava `evento_audit('secret_rotation')`.
 
 ## Telegram webhook secret (`TG_WEBHOOK_SECRET`)
 
@@ -12,7 +12,7 @@ fly secrets set TG_WEBHOOK_SECRET_PREV=$TG_WEBHOOK_SECRET TG_WEBHOOK_SECRET=$NEW
 fly secrets unset TG_WEBHOOK_SECRET_PREV
 ```
 
-Alerta `auth.tg_webhook_reject > 0` fora da janela de rotação → investigar.
+Alerta `auth.tg_webhook_reject > 0` fora da janela de rotaçêo → investigar.
 
 ## Bot service token (`BOT_SERVICE_TOKEN`)
 
@@ -25,15 +25,15 @@ fly secrets unset BOT_SERVICE_TOKEN_PREV
 
 ## Backup encryption key (age)
 
-- Chave em `/etc/logfree/backup.key` (root only). Rotação anual ou sob suspeita.
-- Snapshots novos usam chave nova; antigos mantidos até retenção (14 dias) expirar.
+- Chave em `/etc/logfree/backup.key` (root only). Rotaçêo anual ou sob suspeita.
+- Snapshots novos usam chave nova; antigos mantidos até retençêo (14 dias) expirar.
 
 ## Cookie session secret (`COOKIE_SECRET`)
 
-- Rotação implica invalidar sessões. Planejar em janela de manutenção.
+- Rotaçêo implica invalidar sessões. Planejar em janela de manutençêo.
 - Alternativa: implementar dual-secret no `itsdangerous` (signing + previous_signing).
 
 ## Telemetria (Logfire/Sentry)
 
-- Rotação trimestral via console do provider.
+- Rotaçêo trimestral via console do provider.
 - Verificar ingest contínuo por 1h antes de revogar a chave antiga.

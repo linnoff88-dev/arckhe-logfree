@@ -18,7 +18,7 @@ Cada runbook segue o template: **sintoma → o que verificar → comandos seguro
 | [authz-anomaly.md](authz-anomaly.md) | `authz.deny` em rota nunca-deve-falhar | P2 |
 | [disk.md](disk.md) | volume > 80% / > 90% | P2/P1 |
 | [wal-bloat.md](wal-bloat.md) | WAL > 200 MB | P2 |
-| [secrets.md](secrets.md) | rotação de segredos (planejada) | — |
+| [secrets.md](secrets.md) | rotaçêo de segredos (planejada) | — |
 | [capacity.md](capacity.md) | quotas e cleanups | — |
 | [rollback.md](rollback.md) | reverter deploy após bug | P1 |
-| [anonymization.md](anonymization.md) | anonimização atrasada | P2 |
+| [anonymization.md](anonymization.md) | anonimizaçêo atrasada | P2 |

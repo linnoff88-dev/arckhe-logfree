@@ -236,7 +236,7 @@ async def import_csv(
 
     cidade = db.get(Cidade, cidade_id)
     if cidade is None:
-        raise HTTPException(404, detail="cidade não encontrada")
+        raise HTTPException(404, detail="cidade nêo encontrada")
 
     try:
         for i, row in enumerate(linhas, start=1):
@@ -247,7 +247,7 @@ async def import_csv(
                     raise ValueError("lat fora da bbox")
                 if not (cidade.bbox_min_lng <= lng <= cidade.bbox_max_lng):
                     raise ValueError("lng fora da bbox")
-                # chave natural: cidade + nome (versão simples; lat/lng arredondado fica para fase 2)
+                # chave natural: cidade + nome (versêo simples; lat/lng arredondado fica para fase 2)
                 nome = (row.get("nome") or "").strip()
                 if not nome:
                     raise ValueError("nome vazio")
@@ -276,7 +276,7 @@ async def import_csv(
                 batch.linhas_erro += 1
         if batch.linhas_erro > 0:
             db.rollback()
-            # registrar batch como rollback (transação separada)
+            # registrar batch como rollback (transaçêo separada)
             db.add(
                 ImportBatch(
                     cidade_id=cidade_id,

@@ -88,7 +88,7 @@ _ALLOWLIST: dict[str, set[str]] = {
 
 
 def emit(event_name: str, **payload: Any) -> None:
-    """Emite evento com filtro allowlist. Campos não declarados são descartados."""
+    """Emite evento com filtro allowlist. Campos nêo declarados sêo descartados."""
     allowed = _ALLOWLIST.get(event_name)
     if allowed is None:
         # evento desconhecido: emite só o nome (sem vazar campos arbitrários)

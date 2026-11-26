@@ -1,4 +1,4 @@
-"""Testes de integração para POST /melhor-posto."""
+"""Testes de integraçêo para POST /melhor-posto."""
 from __future__ import annotations
 
 VALID_PAYLOAD = {

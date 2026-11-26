@@ -1,7 +1,7 @@
 """Rota de webhook do Telegram com secret token (PLAN.md item 2).
 
-Não usamos parser do PTB no MVP local — recebemos o JSON e roteamos para handlers
-através de um dispatcher minimalista. Em produção (`ENV=prod`) ligamos o webhook
+Nêo usamos parser do PTB no MVP local — recebemos o JSON e roteamos para handlers
+através de um dispatcher minimalista. Em produçêo (`ENV=prod`) ligamos o webhook
 no Telegram apontando para `/bot/webhook/{path_secret}` com header
 `X-Telegram-Bot-Api-Secret-Token`.
 """
@@ -42,7 +42,7 @@ async def telegram_webhook(
     if not s.tg_webhook_secret:
         raise HTTPException(
             status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="webhook não configurado",
+            detail="webhook nêo configurado",
         )
     if not secrets.compare_digest(path_secret, s.tg_webhook_secret):
         emit("auth.tg_webhook_reject", chave_prefix="path")

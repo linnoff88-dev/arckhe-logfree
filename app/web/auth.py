@@ -1,4 +1,4 @@
-"""Auth do admin: Argon2id + sessão cookie + CSRF + rate limit."""
+"""Auth do admin: Argon2id + sessêo cookie + CSRF + rate limit."""
 from __future__ import annotations
 
 import secrets
@@ -32,7 +32,7 @@ def verify_password(stored: str, candidate: str) -> bool:
 
 
 def login(s: Session, email: str, password: str, ip: str) -> str:
-    """Retorna cookie de sessão se ok; lança 401 caso contrário."""
+    """Retorna cookie de sessêo se ok; lança 401 caso contrário."""
     if not limiter.allow(f"login:ip:{ip}"):
         raise HTTPException(status.HTTP_429_TOO_MANY_REQUESTS, detail="muitas tentativas")
     if not limiter.allow(f"login:email:{email}"):

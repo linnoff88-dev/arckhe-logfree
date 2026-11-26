@@ -89,7 +89,7 @@ async def test_osrm_circuit_breaker_abre_e_fallback():
             await cli.table((-12.97, -38.50), [(-12.99, -38.51)])
         # breaker deve estar aberto agora
         assert cli._breaker.is_open()
-        # próxima chamada não bate na rede
+        # próxima chamada nêo bate na rede
         before = route.call_count
         await cli.table((-12.97, -38.50), [(-12.99, -38.51)])
         assert route.call_count == before
@@ -98,7 +98,7 @@ async def test_osrm_circuit_breaker_abre_e_fallback():
 @pytest.mark.asyncio
 async def test_osrm_fanout_cap():
     async with OSRMClient(base_url="https://osrm.example") as cli:
-        # client não vai chamar respx (sem mock), então cai em fallback
+        # client nêo vai chamar respx (sem mock), entêo cai em fallback
         # passamos 50 destinos; resultado tem ≤ fanout_max (30 default)
         destinos = [(-12.97, -38.50 + 0.001 * i) for i in range(50)]
         res = await cli.table((-12.97, -38.50), destinos)

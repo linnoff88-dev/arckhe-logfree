@@ -95,7 +95,7 @@ def test_telemetry_emit_filtra_campos_nao_allowlist():
         lat3=-12.97,
         lng3=-38.50,
         assumptions_keys=["k_banda"],
-        leak_pii="sensitive",  # não deve aparecer no log
+        leak_pii="sensitive",  # nêo deve aparecer no log
     )
     snap = metrics_snapshot()
     assert snap["counters"].get("event:melhor_posto.request") == 1
@@ -104,6 +104,6 @@ def test_telemetry_emit_filtra_campos_nao_allowlist():
 def test_telemetry_emit_evento_desconhecido_nao_quebra():
     reset_metrics()
     emit("evento.inexistente", anything="x")
-    # não levanta; counter não incrementa porque o nome não está no allowlist
+    # nêo levanta; counter nêo incrementa porque o nome nêo está no allowlist
     snap = metrics_snapshot()
     assert "event:evento.inexistente" not in snap["counters"]

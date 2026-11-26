@@ -2,9 +2,9 @@
 
 - Filesystem: flock no DATA_DIR/owner.lock
 - DB: tabela owner_lease com heartbeat
-- Plataforma: replicas=1 (config externa, não checado aqui)
+- Plataforma: replicas=1 (config externa, nêo checado aqui)
 
-Falha em qualquer camada → não inicia o servidor.
+Falha em qualquer camada → nêo inicia o servidor.
 """
 from __future__ import annotations
 
@@ -88,7 +88,7 @@ class OwnerLease:
                 {"u": self.uuid, "h": self.host, "n": now, "cut": cutoff},
             )
             if res.rowcount == 0:
-                # tentar inserir; se já existe e não é nosso e não expirou → falha
+                # tentar inserir; se já existe e nêo é nosso e nêo expirou → falha
                 try:
                     s.execute(
                         text(

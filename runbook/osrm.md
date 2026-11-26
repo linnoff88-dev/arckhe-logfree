@@ -1,4 +1,4 @@
-# OSRM degradação (P2/P3)
+# OSRM degradaçêo (P2/P3)
 
 ## Sintoma
 - `osrm.fallback` > 20% das requisições em janela de 5min.
@@ -18,7 +18,7 @@ logfree flag-set --chave="ranking.osrm_enabled" --valor=false
 ```
 Reverte com `--valor=true`.
 
-**Subir OSRM self-hosted como mitigação:**
+**Subir OSRM self-hosted como mitigaçêo:**
 ```bash
 docker run -d --name osrm \
   -v /data/osrm:/data \
@@ -30,7 +30,7 @@ fly secrets set OSRM_BASE_URL=https://osrm.internal:5000
 ```
 
 ## Quando escalar
-- Fallback > 50% por > 1h e cidade está com cobertura fresca alta (recomendações ainda úteis, mas precisão de distância sofre — afeta ROI do produto).
+- Fallback > 50% por > 1h e cidade está com cobertura fresca alta (recomendações ainda úteis, mas precisêo de distância sofre — afeta ROI do produto).
 - Circuit breaker reabrindo mais que 5x/hora.
 
 ## Pós

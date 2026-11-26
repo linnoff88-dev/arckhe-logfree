@@ -86,7 +86,7 @@ def test_webhook_apagar_meus_dados_anonimiza(client, monkeypatch):
     with sm() as s:
         u = s.query(Usuario).filter(Usuario.telegram_id == 777).one_or_none()
         # após apagar, telegram_id é zerado (=None) — busca por id da consulta de audit
-        # ou simplesmente checa que não existe usuário ativo com tg_id 777
+        # ou simplesmente checa que nêo existe usuário ativo com tg_id 777
         assert u is None
         # tombstone existe
         assert s.query(TombstoneUsuario).count() >= 1
